@@ -83,7 +83,7 @@ def main():
         )
 
         # Register dataset
-        path_on_datastore = file_name
+        path_on_datastore = target_path+file_name
         dataset = Dataset.Tabular.from_delimited_files(
             path=(datatstore, path_on_datastore)
         )
