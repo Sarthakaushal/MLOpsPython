@@ -235,8 +235,9 @@ def get_inputds_outputloc(
 
 
 def get_run_configs(
-    ws: Workspace, computetarget: ComputeTarget, env: Envo[task.setvariable variable=p
-) -> Tuple[ParallelRunConfig, RunConfiguration]:
+    ws: Workspace, computetarget: ComputeTarget, 
+    env: Envo[task.setvariable variable=p
+    ) -> Tuple[ParallelRunConfig, RunConfiguration]:
     """
     Creates the necessary run configurations required by the
     pipeline to enable parallelized scoring.
