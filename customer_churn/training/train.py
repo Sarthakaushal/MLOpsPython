@@ -33,8 +33,8 @@ from sklearn.model_selection import train_test_split
 
 # Split the dataframe into test and train data
 def split_data(df):
-    X = df.drop('Y', axis=1).values
-    y = df['Y'].values
+    X = df.drop('Churn?', axis=1).values
+    y = df['Churn?'].values
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=0)
