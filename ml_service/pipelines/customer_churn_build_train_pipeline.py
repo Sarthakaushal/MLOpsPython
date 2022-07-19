@@ -64,9 +64,9 @@ def main():
         # create_sample_data_csv()
 
         # Use a CSV to read in the data set.
-        file_name = "data/customer_churn_proc.csv"
-
-        if not os.path.exists(file_name):
+        file_path = "data/customer_churn_proc.csv"
+        file_name = 'customer_churn_proc.csv'
+        if not os.path.exists(file_path):
             raise Exception(
                 'Could not find CSV dataset at "%s". If you have bootstrapped your project, you will need to provide a CSV.'  # NOQA: E501
                 % file_name
@@ -83,7 +83,7 @@ def main():
         )
 
         # Register dataset
-        path_on_datastore = os.path.join(target_path, file_name)
+        path_on_datastore = file_name
         dataset = Dataset.Tabular.from_delimited_files(
             path=(datatstore, path_on_datastore)
         )
