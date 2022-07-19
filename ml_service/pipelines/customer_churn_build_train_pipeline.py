@@ -76,7 +76,7 @@ def main():
         datatstore = Datastore.get(aml_workspace, datastore_name)
         target_path = "training-data/"
         datatstore.upload_files(
-            files=[file_name],
+            files=[file_path],
             target_path=target_path,
             overwrite=True,
             show_progress=False,
