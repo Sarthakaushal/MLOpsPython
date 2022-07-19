@@ -3,7 +3,7 @@ from azureml.pipeline.steps import PythonScriptStep
 from azureml.pipeline.core import Pipeline, PipelineData
 from azureml.core import Workspace, Dataset, Datastore
 from azureml.core.runconfig import RunConfiguration
-# from ml_service.pipelines.load_sample_data import create_sample_data_csv
+from ml_service.pipelines.load_sample_data import create_sample_data_csv
 from ml_service.util.attach_compute import get_compute
 from ml_service.util.env_variables import Env
 from ml_service.util.manage_environment import get_environment
@@ -65,7 +65,7 @@ def main():
         # create_sample_data_csv()
 
         # Use a CSV to read in the data set.
-        file_name = "customer_churn.csv"
+        file_name = "customer_churn_proc.csv"
 
         if not os.path.exists(file_name):
             raise Exception(
