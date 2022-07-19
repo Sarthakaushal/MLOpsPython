@@ -1,3 +1,4 @@
+from traceback import print_tb
 from azureml.pipeline.core.graph import PipelineParameter
 from azureml.pipeline.steps import PythonScriptStep
 from azureml.pipeline.core import Pipeline, PipelineData
@@ -44,7 +45,7 @@ def main():
     run_config.environment.environment_variables[
         "DATASTORE_NAME"
     ] = datastore_name  # NOQA: E501
-
+    print(datastore_name)
     model_name_param = PipelineParameter(name="model_name", default_value=e.model_name)  # NOQA: E501
     dataset_version_param = PipelineParameter(
         name="dataset_version", default_value=e.dataset_version
@@ -62,7 +63,7 @@ def main():
         # This call creates an example CSV from sklearn sample data. If you
         # have already bootstrapped your project, you can comment this line
         # out and use your own CSV.
-        create_sample_data_csv()
+        # create_sample_data_csv()
 
         # Use a CSV to read in the data set.
         file_name = "customer_churn.csv"
