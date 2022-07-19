@@ -55,7 +55,7 @@ def main():
 
     # Get dataset name
     dataset_name = e.dataset_name
-
+    print(list(aml_workspace.datasets))
     # Check to see if dataset exists
     if dataset_name not in aml_workspace.datasets:
         # This call creates an example CSV from sklearn sample data. If you
