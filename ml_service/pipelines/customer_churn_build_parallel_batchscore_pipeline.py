@@ -86,7 +86,8 @@ def get_or_create_datastore(
         )
     else:
         raise ValueError(
-            "No existing datastore named {} nor was enough information supplied to create one.".format(  # NOQA: E501
+            "No existing datastore named {} nor was enough information "+
+            "supplied to create one.".format(  # NOQA: E501
                 datastorename
             )
         )
@@ -144,7 +145,7 @@ def get_fallback_input_dataset(ws: Workspace, env: Env) -> Dataset:
     )
 
     if not os.path.exists(env.scoring_datastore_input_filename):
-        error_message = (
+        error_message = (o[task.setvariable variable=p
             "Could not find CSV dataset for scoring at {}. "
             + "No alternate data store location was provided either.".format(
                 env.scoring_datastore_input_filename
@@ -234,7 +235,7 @@ def get_inputds_outputloc(
 
 
 def get_run_configs(
-    ws: Workspace, computetarget: ComputeTarget, env: Env
+    ws: Workspace, computetarget: ComputeTarget, env: Envo[task.setvariable variable=p
 ) -> Tuple[ParallelRunConfig, RunConfiguration]:
     """
     Creates the necessary run configurations required by the
@@ -415,7 +416,8 @@ def build_batchscore_pipeline():
             name=env.scoring_pipeline_name,
             description="Diabetes Batch Scoring Pipeline",
         )
-        pipeline_id_string = "##vso[task.setvariable variable=pipeline_id;isOutput=true]{}".format(  # NOQA: E501
+        pipeline_id_string = "##vso[task.setvariable variable="+
+        "pipeline_id;isOutput=true]{}".format(  # NOQA: E501
             published_pipeline.id
         )
         print(pipeline_id_string)
