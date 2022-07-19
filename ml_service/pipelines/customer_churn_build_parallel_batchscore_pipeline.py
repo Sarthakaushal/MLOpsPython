@@ -86,8 +86,7 @@ def get_or_create_datastore(
         )
     else:
         raise ValueError(
-            "No existing datastore named {} nor was enough information "+
-            "supplied to create one.".format(  # NOQA: E501
+            "No existing datastore named {} nor was enough information supplied to create one.".format(  # NOQA: E501
                 datastorename
             )
         )
