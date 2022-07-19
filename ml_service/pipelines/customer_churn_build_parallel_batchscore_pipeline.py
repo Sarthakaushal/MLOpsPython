@@ -127,7 +127,7 @@ def get_fallback_input_dataset(ws: Workspace, env: Env) -> Dataset:
     at that location. Create a sample dataset using the customer_churn dataset
     from scikit-learn. Useful when debugging this code in the absence of the
     input data location Azure blob.
-    
+
     :param ws: AML Workspace
     :param env: Environment Variables
 
